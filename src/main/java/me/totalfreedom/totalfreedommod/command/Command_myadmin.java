@@ -72,11 +72,11 @@ public class Command_myadmin extends FreedomCommand
 
                 if (init == null)
                 {
-                    FUtil.adminAction(sender.getName(), "Clearing my supered IPs", true);
+                    FUtil.adminAction(sender.getName(), "Clearing my supered IPs");
                 }
                 else
                 {
-                    FUtil.adminAction(sender.getName(), "Clearing " + target.getName() + "' supered IPs", true);
+                    FUtil.adminAction(sender.getName(), "Clearing supered IPs of" + target.getName());
                 }
 
                 int counter = target.getIps().size() - 1;
@@ -123,7 +123,7 @@ public class Command_myadmin extends FreedomCommand
                     return true;
                 }
 
-                FUtil.adminAction(sender.getName(), "Removing a supered IP" + (init == null ? "" : " from " + targetPlayer.getName() + "'s IPs"), true);
+                FUtil.adminAction(sender.getName(), "Removing a supered IP" + (init == null ? "" : " from " + targetPlayer.getName() + "'s IPs"));
 
                 target.removeIp(args[1]);
                 plugin.al.save();
@@ -142,7 +142,7 @@ public class Command_myadmin extends FreedomCommand
                 }
 
                 String msg = StringUtils.join(args, " ", 1, args.length);
-                FUtil.adminAction(sender.getName(), "Setting personal login message" + (init == null ? "" : " for " + targetPlayer.getName()), false);
+                FUtil.adminAction(sender.getName(), "Setting personal login message" + (init == null ? "" : " for " + targetPlayer.getName()));
                 target.setLoginMessage(msg);
                 msg((init == null ? "Your" : targetPlayer.getName() + "'s") + " login message is now: ");
                 msg("> " + ChatColor.AQUA + targetPlayer.getName() + " is " + ChatUtils.colorize(target.getLoginMessage()));
@@ -153,7 +153,7 @@ public class Command_myadmin extends FreedomCommand
 
             case "clearlogin":
             {
-                FUtil.adminAction(sender.getName(), "Clearing personal login message" + (init == null ? "" : " for " + targetPlayer.getName()), false);
+                FUtil.adminAction(sender.getName(), "Clearing personal login message" + (init == null ? "" : " for " + targetPlayer.getName()));
                 target.setLoginMessage(null);
                 plugin.al.save();
                 plugin.al.updateTables();
