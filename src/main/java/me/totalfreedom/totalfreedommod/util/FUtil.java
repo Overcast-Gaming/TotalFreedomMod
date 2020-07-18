@@ -114,9 +114,9 @@ public class FUtil
         player.setFlying(flying);
     }
 
-    public static void adminAction(String adminName, String action, boolean isRed)
+    public static void adminAction(String adminName, String action)
     {
-        FUtil.bcastMsg(adminName + " - " + action, (isRed ? ChatColor.RED : ChatColor.AQUA));
+        FUtil.bcastMsg(adminName + " > " + action, ChatColor.AQUA);
     }
 
     public static String formatLocation(Location location)
